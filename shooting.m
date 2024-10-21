@@ -13,5 +13,5 @@ fsol[pS_, \[Kappa]_, g_, \[Xi]0_, \[Xi]_] :=
         "MaxIterations" -> 100}
       ] // Flatten;
      (* Финал модуля *)
-  			pS/nsol[[2]][1]*nsol[[2]][\[Xi]0]
+     pS/nsol[[2]][1]*nsol[[2]][\[Xi]0]
      ]
