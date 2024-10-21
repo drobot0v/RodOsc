@@ -1,5 +1,8 @@
 fsol[pS_, \[Kappa]_, g_, \[Xi]0_, \[Xi]_] := 
- Module[{T, v, nsol, res, \[Alpha]},
+ Module[
+ (* Локальные переменные модуля *)
+  {T, v, nsol, res, \[Alpha]},
+  (* Численное решение ДУ *)
   nsol = {T, v} /.
      NDSolve[
       (* ДУ, начальные условия и диапазон значений аргумента разыскиваемых функций *)
@@ -9,4 +12,6 @@ fsol[pS_, \[Kappa]_, g_, \[Xi]0_, \[Xi]_] :=
       	Method -> {"Shooting", "StartingInitialConditions" -> {0, 1}, 
         "MaxIterations" -> 100}
       ] // Flatten;
-  			pS/nsol[[2]][1]*nsol[[2]][\[Xi]0]]
+     (* Финал модуля *)
+  			pS/nsol[[2]][1]*nsol[[2]][\[Xi]0]
+     ]
